@@ -112,7 +112,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
           <div
             style={{
               marginBottom: 8 * fontScale,
-              fontSize: 14 * fontScale,
+              fontSize: 12 * fontScale,
               fontWeight: 500,
               display: 'flex',
               flexDirection: isNarrow ? 'column' : 'row',
