@@ -7,12 +7,12 @@ export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOption
     .addTextInput({
       path: 'title',
       name: 'Panel Title',
-      defaultValue: 'Top Support needs for Climate Action',
+      description: 'Provide a title for your panel',
     })
     .addTextInput({
       path: 'subtitle',
       name: 'Subtitle',
-      defaultValue: 'What help do communities need most for weather changes',
+      description: 'Provide a subtitle or description for your panel',
     })
     .addFieldNamePicker({
       path: 'fieldCategory',
@@ -20,16 +20,19 @@ export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOption
       description: 'Select the field for category names',
     })
     .addFieldNamePicker({
-      path: 'fieldMentionsPercent',
-      name: 'Mentions Percent Field',
+      path: 'fieldMentionsCount',
+      name: 'Mentions Count Field',
+      description: 'Select the count field',
     })
     .addFieldNamePicker({
-      path: 'fieldMentionsCount',
-      name: 'Mentions Percent Count',
+      path: 'fieldMentionsPercent',
+      name: 'Mentions Percent Field',
+      description: 'Select the percentage field',
     })
     .addFieldNamePicker({
       path: 'fieldKeywords',
       name: 'Keywords Field',
+      description: 'Select the keywords field',  
     })
     .addColorPicker({
       path: 'barColor',

@@ -9,8 +9,8 @@ interface Props extends PanelProps<SimpleOptions> {}
 
 export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
   const {
-    title = '🎯 Top Support Needs for Climate Adaptation',
-    subtitle = 'What help do communities need most to adapt to weather changes?',
+    title,
+    subtitle,
     fieldCategory,
     fieldMentionsPercent,
     fieldMentionsCount,
@@ -53,39 +53,36 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
     };
   });
 
-  // Responsive scaling
-  const fontScale = Math.max(0.8, Math.min(width / 600, 1.2));
-  const isNarrow = width < 300;
-
   return (
     <div
       style={{
         width,
         height,
-        padding: 12 * fontScale,
-        fontFamily: 'Inter, sans-serif',
+        padding: 12,
         overflowY: 'auto',
       }}
     >
       <h2
         style={{
-          fontSize: `clamp(16px, ${2 * fontScale}vw, 20px)`,
-          fontWeight: 700,
-          marginBottom: 4,
+          fontSize: 16,
+          fontWeight: 'bold',
+          marginBottom: 8,
+          overflowWrap: 'break-word',
         }}
       >
         {title}
       </h2>
 
-      <div
+      <h3
         style={{
-          fontSize: 14 * fontScale,
+          fontSize: 14,
           color: '#555',
-          marginBottom: 20 * fontScale,
+          marginBottom: 12,
+          overflowWrap: 'break-word',
         }}
       >
         {subtitle}
-      </div>
+      </h3>
 
       {rows.map((row, i) => (
         <div
@@ -93,8 +90,8 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
           style={{
             border: '1px solid #ddd',
             borderRadius: 12,
-            padding: 16 * fontScale,
-            marginBottom: 12 * fontScale,
+            padding: 16,
+            marginBottom: 12,
             boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
             background: 'white',
           }}
@@ -102,8 +99,9 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
           <h3
             style={{
               margin: 0,
-              fontSize: 18 * fontScale,
-              fontWeight: 600,
+              fontSize: 16,
+              fontWeight: 'bold',
+              overflowWrap: 'break-word',
             }}
           >
             {i + 1}. {row.category}
@@ -111,11 +109,12 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
 
           <div
             style={{
-              marginBottom: 8 * fontScale,
-              fontSize: 12 * fontScale,
+              marginBottom: 8,
+              marginTop: 8,
+              fontSize: 12,
               fontWeight: 500,
               display: 'flex',
-              flexDirection: isNarrow ? 'column' : 'row',
+              flexDirection: width < 300 ? 'column' : 'row',
               justifyContent: 'space-between',
             }}
           >
@@ -130,8 +129,8 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
               background: '#f0f4f8',
               borderRadius: 6,
               overflow: 'hidden',
-              height: 8 * fontScale,
-              marginBottom: 12 * fontScale,
+              height: 8,
+              marginBottom: 12,
             }}
           >
             <div
@@ -147,12 +146,12 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
           <p
             style={{
               margin: 0,
-              fontSize: 12 * fontScale,
+              fontSize: 12,
               color: '#444',
               wordWrap: 'break-word',
             }}
           >
-            <strong>Keywords:</strong>{' '}
+            <strong>Keywords: </strong>
             {Array.isArray(row.keywords)
               ? row.keywords.join(', ')
               : row.keywords}
