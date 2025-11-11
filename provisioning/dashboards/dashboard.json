@@ -24,7 +24,60 @@
     {
       "datasource": {
         "type": "yesoreyeram-infinity-datasource",
-        "uid": "ef3i0ocf50lxce"
+        "uid": "bf3t0hm3r01s0e"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "barColor": "#2f855a",
+        "fieldCategory": "category",
+        "fieldKeywords": "keywords",
+        "fieldMentionsCount": "mentions_count",
+        "fieldMentionsPercent": "mentions_percent",
+        "subtitle": "Im showing you a demo right now",
+        "title": "Hi thera and how are you doing"
+      },
+      "pluginVersion": "1.0.0",
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "bf3t0hm3r01s0e"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "data",
+          "source": "url",
+          "type": "json",
+          "url": "https://pier.nethope-ng.ushahidi.com/data",
+          "url_options": {
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\"operations\":[{\"id\":\"nethope_insights\", \"params\": { \"insight\": \"support_needs\" }}]}",
+            "method": "POST"
+          }
+        }
+      ],
+      "title": "New panel",
+      "type": "max-progressbars-panel"
+    },
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "bf3symbzzxd6of"
       },
       "fieldConfig": {
         "defaults": {},
@@ -55,7 +108,7 @@
           "columns": [],
           "datasource": {
             "type": "yesoreyeram-infinity-datasource",
-            "uid": "ef3i0ocf50lxce"
+            "uid": "bf3symbzzxd6of"
           },
           "filters": [],
           "format": "table",
@@ -132,5 +185,5 @@
   "timezone": "",
   "title": "Provisioned ProgressBars dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 2
+  "version": 1
 }
