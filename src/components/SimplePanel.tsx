@@ -15,7 +15,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
     fieldMentionsPercent,
     fieldMentionsCount,
     fieldKeywords,
-    barColor = '#2f855a',
+    barColor,
   } = options;
 
   // Handle no data case
@@ -96,7 +96,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
             background: 'white',
           }}
         >
-          <h3
+      <h3
             style={{
               margin: 0,
               fontSize: 16,
@@ -104,7 +104,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
               overflowWrap: 'break-word',
             }}
           >
-            {i + 1}. {row.category}
+            {options.showNumbering ? `${i + 1}. ` : ''}{row.category}
           </h3>
 
           <div
@@ -120,7 +120,8 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
           >
             <div>Community Mentions:</div>
             <div>
-              {Number(row.mentionsPercent).toFixed(1)}% ({row.mentionsCount} posts)
+              {Number(row.mentionsPercent).toFixed(options.decimalPlaces ?? 1)}%
+              {' '}({row.mentionsCount} posts)
             </div>
           </div>
 

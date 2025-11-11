@@ -37,6 +37,23 @@ export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOption
     .addColorPicker({
       path: 'barColor',
       name: 'Bar Color',
-      defaultValue: '#2f855a',
+      defaultValue: 'green',
+    })
+    .addBooleanSwitch({
+      path: 'showNumbering',
+      name: 'Show numbering',
+      description: 'Toggle whether to show numbers (1., 2., etc.) before each category',
+      defaultValue: false,
+    })
+    .addNumberInput({
+      path: 'decimalPlaces',
+      name: 'Decimal places',
+      description: 'Set how many decimal places to display for percentages (max 10)',
+      settings: {
+        min: 0,
+        max: 10,
+        step: 1,
+      },
+      defaultValue: 1,
     });
 });

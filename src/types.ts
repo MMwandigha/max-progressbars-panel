@@ -6,4 +6,6 @@ export interface SimpleOptions {
   fieldMentionsCount?: string;
   fieldKeywords?: string;
   barColor: string;
+  showNumbering?: boolean;
+  decimalPlaces?: number;
 }
