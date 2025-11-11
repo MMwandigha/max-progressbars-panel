@@ -23,8 +23,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "trlxrdZVk"
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "ef3i0ocf50lxce"
       },
       "fieldConfig": {
         "defaults": {},
@@ -39,6 +39,10 @@
       "id": 1,
       "options": {
         "barColor": "#2f855a",
+        "fieldCategory": "category",
+        "fieldKeywords": "keywords",
+        "fieldMentionsCount": "mentions_count",
+        "fieldMentionsPercent": "mentions_percent",
         "seriesCountSize": "sm",
         "showSeriesCount": false,
         "subtitle": "What help do communities need most for weather changes",
@@ -48,16 +52,29 @@
       "pluginVersion": "1.0.0",
       "targets": [
         {
+          "columns": [],
           "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "db84e60d-b92a-4089-82cb-34842fb1754b"
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ef3i0ocf50lxce"
           },
-          "rawFrameContent": "[\n  {\n    \"columns\": [\n      {\n        \"text\": \"Time\",\n        \"type\": \"time\"\n      },\n      {\n        \"text\": \"Label\",\n        \"type\": \"string\"\n      },\n      {\n        \"text\": \"Value\",\n        \"type\": \"number\"\n      }\n    ],\n    \"rows\": [\n      [1609459200000, \"A\", 10],\n      [1609462800000, \"B\", 20],\n      [1609466400000, \"C\", 15],\n      [1609470000000, \"D\", 25],\n      [1609473600000, \"E\", 30]\n    ]\n  },\n{\n    \"columns\": [\n      {\n        \"text\": \"Time\",\n        \"type\": \"time\"\n      },\n      {\n        \"text\": \"Label\",\n        \"type\": \"string\"\n      },\n      {\n        \"text\": \"Value\",\n        \"type\": \"number\"\n      }\n    ],\n    \"rows\": [\n      [1609459200000, \"A\", 40],\n      [1609462800000, \"B\", 50],\n      [1609466400000, \"C\", 45],\n      [1609470000000, \"D\", 55],\n      [1609473600000, \"E\", 60]\n    ]\n  }\n]",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
           "refId": "A",
-          "scenarioId": "raw_frame"
+          "root_selector": "data",
+          "source": "url",
+          "type": "json",
+          "url": "https://pier.nethope-ng.ushahidi.com/data",
+          "url_options": {
+            "body_content_type": "application/json",
+            "body_type": "raw",
+            "data": "{\"operations\":[{\"id\":\"nethope_insights\", \"params\": { \"insight\": \"support_needs\" }}]}",
+            "method": "POST"
+          }
         }
       ],
-      "title": "Sample Panel Title",
+      "title": "",
       "type": "max-progressbars-panel"
     },
     {
@@ -115,5 +132,5 @@
   "timezone": "",
   "title": "Provisioned ProgressBars dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 1
+  "version": 2
 }
