@@ -12,6 +12,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
     title,
     subtitle,
     fieldCategory,
+    fieldDescription,
     fieldMentionsPercent,
     fieldMentionsCount,
     fieldKeywords,
@@ -47,6 +48,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
     }
     return {
       category: get(fieldCategory),
+      description: get(fieldDescription),
       mentionsPercent: get(fieldMentionsPercent),
       mentionsCount: get(fieldMentionsCount),
       keywords,
@@ -64,7 +66,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
     >
       <h2
         style={{
-          fontSize: 16,
+          fontSize: 18,
           fontWeight: 'bold',
           marginBottom: 8,
           overflowWrap: 'break-word',
@@ -99,7 +101,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
       <h3
             style={{
               margin: 0,
-              fontSize: 16,
+              fontSize: 18,
               fontWeight: 'bold',
               overflowWrap: 'break-word',
             }}
@@ -107,11 +109,22 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
             {options.showNumbering ? `${i + 1}. ` : ''}{row.category}
           </h3>
 
+          <p
+            style={{
+              margin: '6px 0 12px',
+              fontSize: 14,
+              color: '#666',
+              overflowWrap: 'break-word',
+            }}
+          >
+            {row.description}
+          </p>
+
           <div
             style={{
               marginBottom: 8,
               marginTop: 8,
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: 500,
               display: 'flex',
               flexDirection: width < 300 ? 'column' : 'row',

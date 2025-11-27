@@ -39,10 +39,13 @@
       "id": 3,
       "options": {
         "barColor": "#2f855a",
+        "decimalPlaces": 1,
         "fieldCategory": "category",
+        "fieldDescription": "description",
         "fieldKeywords": "keywords",
         "fieldMentionsCount": "mentions_count",
         "fieldMentionsPercent": "mentions_percent",
+        "showNumbering": false,
         "subtitle": "Im showing you a demo right now",
         "title": "Hi thera and how are you doing"
       },
@@ -71,7 +74,7 @@
           }
         }
       ],
-      "title": "New panel",
+      "title": "",
       "type": "max-progressbars-panel"
     },
     {
@@ -185,5 +188,5 @@
   "timezone": "",
   "title": "Provisioned ProgressBars dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 1
+  "version": 2
 }

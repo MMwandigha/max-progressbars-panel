@@ -20,6 +20,11 @@ export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOption
       description: 'Select the field for category names',
     })
     .addFieldNamePicker({
+      path: 'fieldDescription',
+      name: 'Category Description',
+      description: 'Select the description field'
+    })
+    .addFieldNamePicker({
       path: 'fieldMentionsCount',
       name: 'Mentions Count Field',
       description: 'Select the count field',
